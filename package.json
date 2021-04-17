@@ -1,0 +1,23 @@
+{
+  "name": "master-readme-generator",
+  "version": "1.0.0",
+  "description": "# AS A developer   * I WANT a README generator   * SO THAT I can quickly create a professional README for a new project # GIVEN a command-line application that accepts user input",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swanpham/master-readme-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swanpham/master-readme-generator/issues"
+  },
+  "homepage": "https://github.com/swanpham/master-readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
