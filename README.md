@@ -1,4 +1,4 @@
-# master-readme-generator
+# Master-readme-generator
 
 # AS A Developer
   * I WANT a README generator
@@ -31,4 +31,28 @@
 
 * WHEN I click on the links in the Table of Contents
 * THEN I am taken to the corresponding section of the README
+
+# Table of Contents
+
+  ## Installation
+    *
+
+  ## Usage
+    *
+
+  ## Credits
+    *
+  
+  ## License
+    *
+
+  ## Badges
+
+  ## Contributing
+
+  ## Tests
+
+
+
+  
 

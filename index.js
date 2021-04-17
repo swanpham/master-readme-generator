@@ -58,7 +58,7 @@ const promptUser = () => {
 const promptProject = () => {
 console.log(`
 =================
-Add a New Project
+Mater READme Generator
 =================
 `);
     return inquirer.prompt([
