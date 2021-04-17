@@ -1,4 +1,4 @@
-# master-readme-generator
+# Master-readme-generator
 
 # AS A developer
   * I WANT a README generator
