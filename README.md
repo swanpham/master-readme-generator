@@ -1,8 +1,9 @@
 
-# Testing 
+# sample for readme generator
+![GitHub license](https://img.shields.io/badge/license-GNU GPLv3-blue.svg)
 
 ## Description
-testing
+command line generator for github repository
 
 ## Table Of Contents
 * [Installation](#installation)
@@ -13,21 +14,21 @@ testing
 * [Question](#questions)
 
 ## Installation
-testing
+clone repository and run npm install
 
 ## Usage
-testing
+run node index.js and follow all of the prompts
 
 ## License
-MIT
+GNU GPLv3
 
 ## Contribution
-testing
+this project is not open for contributions
 
 ## Tests
-testing
+no test for this project
 
 ## Questions
 To conatct me with any further questions:
 * [Github](https://github.com/swanpham)
-* [Email](mailto://swan@naislrus.ca)  
+* [Email](mailto://swan@swanbeauty.ca)  

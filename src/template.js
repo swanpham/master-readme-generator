@@ -3,6 +3,7 @@ module.exports = responses => {
     
     return `
 # ${ title}
+![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)
 
 ## Description
 ${description}

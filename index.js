@@ -125,20 +125,22 @@ const questions = () => {
     },
 
     {
-      type:'checkbox',
+      type:'list',
       name: 'license',
       message: 'Select a license for your application',
       choices: ['MIT', 'GNU GPLv3', 'Apache License 2.0', 'ISC', 'None'],
-      validate: input => { 
-        if (input.length === 1) {
-          return true
-        }
-        else {
-          console.log('Select a license!');
-          return false
-        }
-      }
+      // validate: input => { 
+      //   if (input.length === 1) {
+      //     return `![GitHub license](https://img.shields.io/badge/license-${input}-blue.svg)`
+      //   }
+      //   else {
+      //     console.log('Select a license!');
+      //     return false
+      //   }
+      // }
+
     }
+    
   ])
   .then(data => {
     return data

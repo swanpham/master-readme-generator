@@ -1,7 +1,12 @@
 const fs = require('fs');
 
 module.exports = data => {
+   
+  
+
     return new Promise ((resolve, reject) => {
+        console.log(data);
+        
         fs.writeFile('./readme.md', data, error => {
             if (error) {
                 reject(error)
