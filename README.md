@@ -1,6 +1,6 @@
 
 # sample for readme generator
-![GitHub license](https://img.shields.io/badge/license-GNU GPLv3-blue.svg)
+![GitHub license](https://img.shields.io/badge/license-GNU%GPLv3-blue.svg)
 
 ## Description
 command line generator for github repository
