@@ -1,107 +1,165 @@
-// TODO: Include packages needed for this application
-
-// TODO: Create an array of questions for user input
-const questions = [];
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
-
 const inquirer = require('inquirer');
+const template = require('./src/template.js');
+const save = require('./utils/save.js');
 
-
-// const fs = require('fs');
-// const generatePage = require('./src/page.template.js');
-
-// const pageHTML = generatePage(name, github);
-
-// fs.writeFile('./index.html', pageHTML, err => {
-//   if (err) throw err;
-
-//   console.log('Master READme Generator complete! Check out index.html to see the output!');
-// });
-
-const promptUser = () => {
-    return inquirer.prompt([
-      {
-        type: 'input',
-        name: 'name',
-        message: 'What is your name?'
-      },
-      {
-        type: 'input',
-        name: 'github',
-        message: 'Enter your GitHub Username'
-      },
-      {
-        type: 'input',
-        name: 'github',
-        message: 'Enter your GitHub URL'
-      },
-      {
-        type: 'input',
-        name: 'Email',
-        message: 'Enter your email address'
-      },
-      {
-        type: 'input',
-        name: 'about',
-        message: 'Provide some information about yourself:'
+const questions = () => {
+  return inquirer.prompt ([
+    {
+      type:'input',
+      name: 'title',
+      message: 'what is the title of your application?',
+      validate: input => { 
+        if (input) {
+          return true
+        }
+        else {
+          console.log('please enter your title');
+          return false
+        }
       }
-    ]);
-};
-const promptProject = () => {
-console.log(`
-=================
-Mater READme Generator
-=================
-`);
-    return inquirer.prompt([
-      {
-        type: 'input',
-        name: 'name',
-        message: 'What is the name of your project?'
-      },
-      {
-        type: 'input',
-        name: 'description',
-        message: 'Provide a description of the project (Required)'
-      },
-      {
-        type: 'checkbox',
-        name: 'languages',
-        message: 'What did you build this project with? (Check all that apply)',
-        choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
-      },
-      {
-        type: 'input',
-        name: 'link',
-        message: 'Enter the GitHub link to your project. (Required)'
-      },
-      {
-        type: 'confirm',
-        name: 'feature',
-        message: 'Would you like to feature this project?',
-        default: false
-      },
-      {
-        type: 'confirm',
-        name: 'confirmAddProject',
-        message: 'Would you like to enter another project?',
-        default: false
+    },
+
+    {
+      type:'input',
+      name: 'description',
+      message: 'Provide your project description',
+      validate: input => { 
+        if (input) {
+          return true
+        }
+        else {
+          console.log('please enter your project description');
+          return false
+        }
       }
-    ]);
-};  
-promptUser()
-  .then(answers => console.log(answers))
-  .then(promptProject)
-  .then(projectAnswers => console.log(projectAnswers));
+    },
 
+    {
+      type:'input',
+      name: 'installation',
+      message: 'Provide your project installation instruction',
+      validate: input => { 
+        if (input) {
+          return true
+        }
+        else {
+          console.log('please provide your project installation instruction');
+          return false
+        }
+      }
+    },
 
+    {
+      type:'input',
+      name: 'usage',
+      message: 'Provide instruction for use of your project',
+      validate: input => { 
+        if (input) {
+          return true
+        }
+        else {
+          console.log('please Provide instruction for use of your project');
+          return false
+        }
+      }
+    },
+
+    {
+      type:'input',
+      name: 'contrinuting',
+      message: 'Provide guideline for contributions of your project',
+      validate: input => { 
+        if (input) {
+          return true
+        }
+        else {
+          console.log('please Provide guideline for contributions of your project');
+          return false
+        }
+      }
+    },
+
+    {
+      type:'input',
+      name: 'test',
+      message: 'Provide test intrustion for your project',
+      validate: input => { 
+        if (input) {
+          return true
+        }
+        else {
+          console.log('please Provide test intrustion for your project');
+          return false
+        }
+      }
+    },
+
+    {
+      type:'input',
+      name: 'github',
+      message: 'Provide github username for your project',
+      validate: input => { 
+        if (input) {
+          return true
+        }
+        else {
+          console.log('please Provide github username for your project');
+          return false
+        }
+      }
+    },
+
+    {
+      type:'input',
+      name: 'email',
+      message: 'Provide your email address',
+      validate: input => { 
+        if (input) {
+          return true
+        }
+        else {
+          console.log('please Provide your email address');
+          return false
+        }
+      }
+    },
+
+    {
+      type:'list',
+      name: 'license',
+      message: 'Select a license for your application',
+      choices: ['MIT', 'GNU GPLv3', 'Apache License 2.0', 'ISC', 'None'],
+      // validate: input => { 
+      //   if (input.length === 1) {
+      //     return `![GitHub license](https://img.shields.io/badge/license-${input}-blue.svg)`
+      //   }
+      //   else {
+      //     console.log('Select a license!');
+      //     return false
+      //   }
+      // }
+
+    }
+    
+  ])
+  .then(data => {
+    return data
+  })
+}
+
+questions()
+.then (data => {
+  return template(data);
+})
+.then (data => {
+  return save(data);
+})
+.then (message => {
+  console.log(message);
+})
+.catch (error => {
+  console.log(error);
+})
+  
 
 
